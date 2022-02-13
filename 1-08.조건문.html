@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // if, switch
+    // 이 둘의 차이점:
+    // if 문은 위에서부터 하나하나 비교하면서 쭉 밑으로 진행한다. if - elseif - elseif - elseif - ... - else
+    // switch 문은 해당 case로 바로 가서 해당 case 문 실행.
+    // 프로그램 코드적으로는 switch문이 좋다
+
+    var age = 19;
+    var isAdult = false;
+    if(age>18){
+      isAdult = true;
+    }
+
+    var hour = 22;
+    // if 문은 제일 위에부터 순차적으로 훑고 내려오기 때문에 else if 에 hour>10 && hour<18 이렇게 안해줘도 된다.
+    if(hour < 10){
+      console.log("Good morning");
+    }
+    else if(hour < 18){
+      console.log("Good afternoon");
+    }
+    else if(hour<21){
+      console.log("Good eveneing");
+    }
+    else{
+      console.log("Good night");
+    }
+
+
+    // switch
+    var d = new Date(); // JS의 내장 객체
+    var day = d.getDay();
+    console.log(day);
+
+    var dayName="";
+    switch(day){
+      case 1:
+        dayName = "월요일";
+        break;
+
+      case 2:
+        dayName = "화요일";
+        break;
+
+      case 3:
+        dayName = "수요일";
+        break;
+
+      case 4:
+        dayName = "목요일";
+        break;
+
+      case 5:
+        dayName = "금요일";
+        break;
+
+      case 6:
+        dayName = "토요일";
+        break;
+
+      case 0:
+        dayName = "일요일";
+        break;
+
+      default:
+        dayName = ""
+        break;
+    }
+    console.log(dayName)
+
+
+
+  </script>
+</body>
+</html>
