@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var txt = "ABCDEFGHIJLMNOP"
+    console.log(txt.length); // 글자 길이
+
+    // indexOf
+    var str = "Please locate where 'locate'";
+    console.log(str.indexOf("locate"));     // locate를 가장 제일 처음 찾은 index 번호를 return 해줌.
+    console.log(str.indexOf("Ha"));         // 없으면 -1 리턴.
+    if(str.indexOf("locate") > -1){
+      console.log("locate 문자 발견");
+    }
+
+    // lastIndexOf
+    console.log(str.lastIndexOf("locate"));     // locate를 가장 마지막에 찾은 index 번호를 return 해줌.
+
+    // search
+    console.log("search" + str.search("locate")); // 가장 먼저 찾은 index 번호 return
+
+    // slice
+    var str = "Apple, Banana, Kiwi";
+    console.log(str.slice(7, 13)); // 7번 index부터 12번 index 까지만 출력
+    console.log(str.slice(7)); // 7번 index부터 끝까지 출력
+    console.log(str.slice(-12, -6)); // -면 뒤에서 부터 시작, -1 은 i임. // -12면 B, -6은 a이므로 출력값 Banana
+
+    // substring
+    console.log(str.substring(7,13)); // slice 와 기능 동일
+
+    // substr
+    console.log(str.substr(7,6)); // 시작 index로부터 몇글자를 가져올지, 출력값 : Banana
+
+    var birthday = "220213";
+    console.log(birthday.substr(0,2)); // 몇년생인지 출력
+    console.log(birthday.substr(2,2)); // 몇월생인지 출력
+
+    var birthday = "2022-02-13";
+    console.log(birthday.substring(0,birthday.indexOf("-")));
+    // 처음으로 -가 등장할때까지 출력한다. 몇년생인지 출력하는 코드
+
+    // replace
+    var str = "Pleae visit here!";
+    var str2 = str.replace("here", "there"); // here 을 there로 바꾸기
+    console.log(str2);
+
+    var str = "Pleae visit here here here!";
+    var str2 = str.replace("here", "there"); // here이 발견된 첫 단어만 변경함.
+    console.log(str2);
+
+    var str = "Pleae visit here here here!";
+    var str2 = str.replace(/here/g, "there"); // here이 발견된 모든 단어를 변경. 대소문자는 구분함.
+    console.log(str2);
+
+    var str = "Pleae visit here HERE here!";
+    var str2 = str.replace(/here/gi, "there"); // here이 발견된 모든 단어를 변경. 대소문자는 구분없이 변경함.
+    console.log(str2);
+
+    // uppercase
+    console.log(str.toUpperCase()); // 모두 대문자로 변경
+
+    // lowercase
+    console.log(str.toLowerCase()); // 모두 소문자로 변경
+
+    // (실무에 적용) 사용자가 john을 검색해도 John, JOHN, john 등 다 검색할 수 있어야하므로
+    // 무조건 uppercase or lowercase로 변경해서 데이터베이스에 던져주게 한다.
+
+    // concat : 문자열 결합
+    var txt1 = "Hello";
+    var txt2 = "World";
+    var txt3 = txt1 + " " + txt2;
+    var txt = txt1.concat(" ", txt2, " Hi"); // concat에 argument를 무제한으로 넣을 수 있다.
+
+    // trim
+    var str = "    Hello    World!     "
+    console.log(str);
+    console.log(str.trim()); // 잎 뒤의 공백을 다 지워줌. 중간의 공백은 안지워줌.
+    
+    // padStart
+    var str = "S";
+    console.log(str.padStart(4,0)); // 5를 4글자로 만들되 앞에 0을 추가해서 4글자로 만든다.
+
+    // DB에 날짜 등을 저장할 때 사용자가 한자리수를 입력해도 두자리로 저장되게 할 때 사용
+
+    // padEnd
+    var str = "1S";
+    console.log(str.padStart(4,0)); // 15를 4글자로 만들되 뒤에 0을 추가해서 4글자로 만든다.
+
+    // charAt
+    var str = "Hello world";
+    console.log(str.charAt(0)); // str에 저장된 것 중 첫번째 char을 가져와라 출력값 : H
+
+    // split
+    var tags = "키보드, 기계식, 블루투스, 마우스"
+    var arr = tags.split(", "); // ()안의 내용을 기준으로 문자열을 나눠준다. 상품 태그 저장시 유용
+    console.log(arr);
+
+
+  </script>
+</body>
+</html>
