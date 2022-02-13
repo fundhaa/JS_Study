@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 반복문 - 조건이 만족하는 동안에 계속해서 {} 블럭 안의 코드를 실행
+    // for(조건){
+    // 코드
+    // }
+    for(var i=0; i<5; i++){
+      console.log("The number is " + i);
+    }
+
+    var i = 0; // i를 여기에 선언해주면
+    var len = 10;
+    var total = 0;
+    for(; i<=10; ){ // 여기에 i=0을 생략해도 된다.
+      total = total + i;
+      i++; // 또한 여기에 i++을 써주면 for 문 안에 i++을 써주지 않아도 된다.
+    }
+
+    for (var i = 0; i<5; i++){
+      if(i==3){
+        //break; // for loop 종료
+        continue; // i==3이면 아래 console.log 출력안하고 계속 진행.
+      }
+      console.log("The number is " + i);
+    }
+
+    var numbers = [43, 23, 6, 9]; // 배열선언
+    var len = numbers.length;
+    for (var i=0; i<len; i++){
+      console.log(numbers[i]);
+    }
+//----------------------------------------------------------//
+    // for - in
+    for(var i in numbers){ // i에는 numbers 배열의 인덱스를 처음부터 끝까지 넣어준다.
+      console.log(numbers[i]);
+    }
+
+    // Object 선언
+    var person = {
+      firstName : "Jeongwoo",
+      lastName : "Ha",
+      age : "28"
+      };
+
+    // Object key 접근하는 두가지 방법
+    //person.firstName;
+    //person["firstName"];
+
+    for(var key in person){ // key에는 firstName, lastName, age가 순서대로 들어간다.
+      console.log(person[key]);
+    }
+//----------------------------------------------------------//
+    // for - of
+    for(var num of numbers){
+      console.log(num);
+    }
+
+    var cars = ["Hyundai", "KIA", "Volvo"];
+    for(var car of cars){
+      console.log(car);
+    }
+//----------------------------------------------------------//
+    // while(조건){}
+    var i = 1;
+    var total = 0;
+    while(i <= 10){ // i=10까지 실행하고 i=11일떄 while 안돔. (조건)이 true 일 때 while 문 동작.
+      total = total+i;
+      i++;
+    }
+
+    // do-while
+    var i =1;
+    do{
+      total = total+i;
+      i++;
+    }while(i<=10);
+// 이 둘의 차이점은, i의 초기값에 11을 넣었다고 했을 때 위의 while은 한번도 돌지 않고, 밑의 do-while은 일단 한번 돈다.
+// while의 total = 0 / do-while의 total = 11
+
+
+  </script>
+</body>
+</html>
