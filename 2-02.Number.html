@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Number
+    
+    var x = 123;
+    
+    console.log(x.toString(2)); // 2진수로 변경
+
+    // toFixed()
+    // 지정된 소수점 자리수까지 반올림으로 표기 // 유용한 기능(달러 표시)
+    var x = 59.562784;
+    console.log(x.toFixed(3)); // 59.593
+
+    // toPrecision
+    // 정수까지 포함해서 전체 자릿수를 2자리로 함. + 반올림
+    var x = 9.565;
+    console.log(x.toPrecision(2)); // 9.6
+
+    var x = Number("10"); // 문자열을 숫자 10으로 바꿔줌
+    var x = Number(true); // 1, true는 1을 의미함
+    var x = Number(false); // 0, false는 0을 의미
+
+    console.log(Number("   10    ")); // 10, Number는 공백을 없애주고 숫자만 리턴해줌.
+    console.log(Number(" 10,44  ")); // NaN,  Comma 는 숫자로 인식할 수 없다. 따라서 NaN 출력(Not a Number)
+    console.log(Number("Ha")); // NaN
+    console.log(Number(" 10  33  ")) // NaN, 숫자와 숫자사이의 공백은 못없앤다.
+
+    // parseInt()
+    // 소숫점 이하는 버리고 정수만 취함
+    console.log(parseInt("3")); // 3
+    console.log(parseInt("3.79265734")); // 3
+    console.log(parseInt("10 33")); // 10, 처음 만나는 숫자만 return
+    console.log(parseInt("12 years")); // 12, 처음 만나는 숫자만 return
+    console.log(parseInt("100.53 years")); // 100
+    console.log(parseInt("years 12")); // NaN, 처음에 문자가 나오면 NaN
+
+    // parseFloat()
+    // 소숫점자리를 다 취함.
+    console.log(parseFloat("10")); // 10
+    console.log(parseFloat("13.99992879432")); // 13.99992879432
+
+
+
+  </script>
+</body>
+</html>
