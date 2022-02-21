@@ -18,11 +18,11 @@
       ]
     }
 
-    // JSON.stringify
+    // JSON.stringify, object를 문자열로 변환
     console.log(data); // type : object
     console.log(JSON.stringify(data)); // type : 문자열
 
-    // JSON.parse
+    // JSON.parse, 문자열을 object로 변환
     var txt = '{"employees": [' + 
         '{"firstName":"JW", "lastName":"Ha"},' + 
         '{"firstName":"SH", "lastName":"Cho"},' +
@@ -30,8 +30,6 @@
 
     var obj = JSON.parse(txt);
     console.log(obj)
-
-
 
   </script>
 </body>
