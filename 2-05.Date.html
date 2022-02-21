@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <script>
+
+    var d = new Date(); // 현재 날짜, 시간
+    console.log(d); // Mon Feb 21 2022 22:10:02 GMT+0900 (한국 표준시)
+
+    // month 는 0부터 시작 (1월은 0)
+    // day 는 1부터 시작 (1일은 1)
+    var d = new Date(2021,3,27,11,14,23) // 년, 월, 일, 시, 분, 초 순서로 Date 입력
+    console.log(d); // Tue Apr 27 2021 11:14:23 GMT+0900 (한국 표준시)
+
+    // 한국의 경우 : 2020-03-21, 2020.03.21
+    // 미국의 경우 : Mar 21, 2021
+    // month는 나라마다 명칭이 다르기 때문에 month 배열을 만들어서 부르게 한다.
+    // 그래서 month는 0부터 시작
+    // var month_en = ["Jan", "Feb", "Mar", ... ];
+    // var month_kor = ["1", "2", "3", ... ];
+    
+    var d = new Date(); // 사용자 PC가 시간설정이 잘못되어있으면 잘못된 시간이 출력될 수 있다.
+    var year = d.getFullYear(); // 현재 연도
+    var month = d.getMonth(); // 현재 달
+    var date = d.getDate(); // 현재 일
+    var day = d.getDay();
+
+    console.log("year", year);
+    console.log("month", month);
+    console.log("date", date);
+    console.log("day", day); // 일요일 - 0, 월요일 - 1, 화요일 - 2, ...
+
+    var hour = d.getHours();
+    var minute = d.getMinutes();
+    var second = d.getSeconds();
+
+    // 타임존
+    // 2022.02.21 22:24:16 (한국)
+    // 2022.02.21 13:24:16 (영국)
+    // DB에는 GMT 00 기준으로 저장하고 사용자레벨에서 해당 타임존의 시간을 더해주어야 한다.
+
+    var d = new Date();
+    var timezone = d.getTimezoneOffset(); // -540, 분단위로 나옴, -9시간과 같은 의미
+    console.log(timezone);
+
+    // UTC 기준 날짜 출력
+    var d = new Date(); 
+    var utcyear = d.getUTCFullYear(); 
+    var utcmonth = d.getUTCMonth();
+    var utcdate = d.getUTCDate(); 
+    var utcday = d.getUTCDay();
+
+    console.log("utcyear", utcyear);
+    console.log("utcmonth", utcmonth);
+    console.log("utcdate", utcdate);
+    console.log("utcday", utcday); 
+
+    // Set 함수
+    // Get 함수에 대응되는 Set 함수가 있다.
+    var d = new Date();
+    var pastyear = d.setFullYear(1995); // 연도 세팅
+    var pastmonth = d.setMonth(3); // 달 세팅
+    var pastdate = d.setDate(7); // 일 세팅
+    //var day = d.setDay("3"); // 요일 세팅 3=수요일
+
+    console.log("year", pastyear);
+    console.log("month", pastmonth);
+    console.log("date", pastdate);
+    //console.log("day", day);
+
+    // open source moment.js 활용
+    var momentd = moment().format("YYYY-MM-DD");
+    console.log(momentd); // 2022-02-21
+
+    var momentd = moment().format("MMM DD, YYYY");
+    console.log(momentd); // Feb 21, 2022
+
+    var momentd = moment().subtract(7, "days").format("MMM DD, YYYY");
+    console.log(momentd); // 7일 전 날짜 출력
+
+    var momentd = moment().add(7, "days").format("MMM DD, YYYY");
+    console.log(momentd); // 7일 후 날짜 출력
+
+    var momentd = moment().add(4, "hours").format("MMM DD, YYYY / HH");
+    console.log(momentd); // 4시간 후 시간 출력
+
+
+
+  </script>
+</body>
+</html>
