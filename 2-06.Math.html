@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // round(), 반올림 반내림
+    console.log(Math.round(4.9)); // 5
+    console.log(Math.round(4.4)); // 4
+
+    // ceil(), 올림
+    // 게시판 페이지번호 처리할 때 유용
+    console.log(Math.ceil(4.2)); // 5
+
+    // floor(), 내림
+    console.log(Math.floor(9.9)); // 9
+    console.log(Math.floor(-4.2)); // -5
+
+    // trunc(), 정수부분만 리턴
+    console.log(Math.trunc(9.9)); // 9
+    console.log(Math.trunc(-4.2)); // -4
+
+    // sign(), 음수이면 -1, 양수이면 1, 0이면 0 리턴
+    console.log(Math.sign(-7.4)); // -1
+
+    // pow(), 제곱
+    console.log(Math.pow(8, 2)); // 8^2 = 64
+
+    // sqrt(), 루트
+    console.log(Math.sqrt(64)); // 8
+
+    // abs(), 절댓값 리턴
+    console.log(Math.abs(-4.7)); // 4.7
+
+    // max(), min(), 최댓값, 최솟값 리턴
+    console.log(Math.max(0, 77, -98, -670, 99)); // 99
+    console.log(Math.min(0, 77, -98, -670, 99)); // -670
+
+    // random()
+    var x = Math.random(); // 0~1사이의 숫자
+    console.log(x);
+
+    // 1~10 랜덤숫자
+    var x = Math.floor((Math.random() * 10) + 1);
+
+    // 1~100 랜덤숫자
+    var x = Math.floor((Math.random() * 100) + 1);
+    
+    // min, max 사이의 랜덤 숫자 출력
+    function getRandInt(min, max){
+      return Math.floor(Math.random()*(max-min+1))+min;
+    }
+    console.log(getRandInt(1, 45));
+
+
+
+  </script>
+</body>
+</html>
