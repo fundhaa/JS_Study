@@ -40,9 +40,17 @@
     }, 5000); // 5초(5000ms) 후에 function 안에 있는 코드 실행
 
     // setInterval
-    setInterveal(function(){
-      console.log("3초마다 프로그램 실행");
-    }, 3000);
+    var i = 0;
+    var func = setInterval(function(){
+      console.log("3초마다 프로그램 실행 - " + i);
+      if(i==3){
+        // clearInterval : 무한 반복하지 않게 break 역할
+        console.log("반복을 종료합니다.")
+        clearInterval(func);
+      }
+      i++;
+    }, 3000); // 동일한 메시지로 출력하면 로그에 번호가 하나씩 올라가서 이렇게 구현함.
+
 
 
 
