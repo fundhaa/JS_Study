@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // ES6 - EcmaScript 6버전부터 생성됨
+    function hello(){
+      console.log("hello world");
+      return "Hello world";
+    }
+
+    var hello = function(){
+      // console.log("hello world");
+      return "Hello world";
+    }
+
+    var hello = () => "Hello world";
+
+    // Arrow function =>
+    var hello = () => {
+      console.log("hello world");
+      return "Hello world";
+    }
+
+    // Arrow function 활용, ()안에 파라미터를 넣어주고 => 다음에 return 값을 써준다.
+    // 파라미터가 하나일 때는 ()를 생략할 수도 있다.
+    // var hi = fullName => "Hi" + fullName; 도 가능.
+    var hi = (fullName) => "Hi" + fullName;
+    console.log(hi(" Ha"));
+
+    var greeting = (firstName, lastName) => "Hello Nice to meet you " + lastName + " " + firstName;
+    console.log(greeting("Jeongwoo", "Ha"));
+  </script>
+</body>
+</html>
