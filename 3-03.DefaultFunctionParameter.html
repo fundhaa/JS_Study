@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function say(message){
+      console.log(message);
+    }
+    say("Hello world"); // Hello world 출력
+    say(); // undefined 출력
+
+    function say2(message){
+      if(message != undefined){
+        console.log(message);
+      }
+      else{
+        console.log("파라미터가 넘어오지 않았습니다.");
+      }
+    }
+
+    // default function parameter
+    function say3(message="파라미터가 넘어오지 않았습니다."){
+      console.log(message);
+    }
+
+    say(); // default parameter 가 지정되어 있기 때문에 정상
+
+    function plus(x, y=1){
+      console.log(x+y);
+    }
+    plus(4,2); // 6
+    plus(1); // 2
+
+    // ES6 - EcmaScript 6버전
+
+  </script>
+</body>
+</html> 
