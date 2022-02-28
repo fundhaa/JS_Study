@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getPerson(){
+      return {
+        firstName: "John",
+        lastName: "Doe",
+        age : 36,
+        email : "john@gmail.com",
+        city : "New york",
+        country : "USA"
+      };
+    }
+
+    var person = getPerson(); // 갖고 있는 모든 key, value가 호출됨.
+    console.log(person);
+
+    // firstname, lastname 만 가져오고 싶을 땐
+    console.log(person.firstName);
+    console.log(person.lastName);
+    // 이렇게 사용을 했으나
+    // ECMA script 6버전에서는 이렇게 사용할 수 있다.
+    // Object Destructuring
+    var {firstName, lastName} = getPerson();
+    console.log(firstName);
+    console.log(lastName);
+
+
+  </script>
+</body>
+</html>
